@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import profilePhoto from '../assets/profile.jpg';
 
 const Home = () => {
   return (
@@ -26,13 +27,15 @@ const Home = () => {
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
-              {/* Replace with your actual photo */}
-              <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                <span className="text-gray-500">Your Photo</span>
-              </div>
-            </div>
-          </div>
+  <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl">
+    <img 
+      src={profilePhoto} 
+      alt="Your Name"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+</div>
         </div>
       </div>
     </section>
