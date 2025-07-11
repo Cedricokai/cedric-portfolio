@@ -16,6 +16,8 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Specify your Node.js version
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
@@ -33,7 +35,8 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write  # Required for gh-pages deployment
 
     steps:
       - name: Download artifact
@@ -47,3 +50,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          # Optional but recommended:
+          keep_files: false  # Clean existing files before deploy
+          force_orphan: true  # Single commit deployment
