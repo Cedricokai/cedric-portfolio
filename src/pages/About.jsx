@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Headshot from '../assets/headshot.jpg';
+import profilePhoto from '../assets/profilePhoto.jpg';
 
 export default function About() {
   const [activeTab, setActiveTab] = useState('skills');
@@ -51,7 +51,7 @@ export default function About() {
           <div className="lg:w-1/3 flex flex-col items-center">
             <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 shadow-xl mb-6">
               <img 
-                src={Headshot} 
+                src={profilePhoto} 
                 alt="Cedric Okai"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
               />
